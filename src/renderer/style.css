@@ -1,0 +1,24 @@
+.login-container {
+    background-color: #ffffff;
+    margin: 50px;
+}
+.login-container .btns-container {
+    text-align: right;
+}
+.login-container .btns-container button:last-child {
+    margin-left: 20px;
+}
+
+.tab-container {
+    display: flex;
+    flex-direction: row;
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 1px solid #dedede;
+    cursor: default;
+}
+.tab-container .tab-item {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-right: 1px dashed #dedede;
+}
