@@ -1,14 +1,13 @@
 
-const { ipcMain } = require("electron")
-const jsonfile = require("jsonfile")
-const { getPath  } = require("./utils")
-const ipcListener = require("./ipcListener")
-const Views = require("./views")
-const View = require("./view")
-const Windows = require("./windows")
+import jsonfile from "jsonfile"
+import { getPath  } from "./utils"
+import ipcListener from "./ipcListener"
+import Views from "./views"
+import View from "./view"
+import Windows from "./windows"
 
 
-class Application {
+export default class Application {
     config = {}
     configPath = ""
     constructor(){
@@ -68,4 +67,3 @@ class Application {
     }
 }
 
-module.exports = Application 

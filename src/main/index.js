@@ -1,5 +1,5 @@
-const { app } = require("electron")
-const Application = require("./application")
+import { app } from "electron"
+import Application from "./application"
 
 const application = new Application()
 

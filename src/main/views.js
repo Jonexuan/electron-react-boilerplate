@@ -1,6 +1,6 @@
-const { EventEmitter } = require("events")
+import { EventEmitter } from "events"
 
-class Views extends EventEmitter {
+export default class Views extends EventEmitter {
     views = new Map()
     selectedId = 0
     application = null
@@ -56,5 +56,3 @@ class Views extends EventEmitter {
     removeView(){}
     destoryView(){}
 }
-
-module.exports = Views

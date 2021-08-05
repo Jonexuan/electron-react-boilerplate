@@ -1,7 +1,7 @@
-const {app, BrowserWindow} = require("electron")
-const {EventEmitter} = require("events")
+import {app, BrowserWindow} from "electron"
+import {EventEmitter} from "events"
 
-class Windows extends EventEmitter {
+export default class Windows extends EventEmitter {
     windows = new Map()
     application = null
     constructor(application){
@@ -46,5 +46,3 @@ class Windows extends EventEmitter {
         this.createLoginWindow()
     }
 }
-
-module.exports = Windows

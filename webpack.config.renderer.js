@@ -37,7 +37,7 @@ const {
   });
   
   applyEntries(appConfig, [
-    "main",
+    "master",
     "apps",
     "appstore",
     "login"

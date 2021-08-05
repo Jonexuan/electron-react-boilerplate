@@ -1,6 +1,6 @@
-const {ipcMain} = require("electron")
+import {ipcMain} from "electron"
 
-const ipcListener = (application) => {
+export default (application) => {
     ipcMain.on("GET_CONFIG", (e) => {
         e.returnValue = application.config
     })
@@ -26,5 +26,3 @@ const ipcListener = (application) => {
         application.sendViewsStateToWebContents()
     })
 }
-
-module.exports = ipcListener

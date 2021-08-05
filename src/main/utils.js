@@ -1,14 +1,14 @@
-const { app } = require("electron")
-const {resolve, join} = require("path")
+import { app } from "electron"
+import {resolve, join} from "path"
 
-const getPath = (str) => {
+export const getPath = (str) => {
     if (process.env.NODE_ENV == "development"){
         return resolve(str)
     }
     return join(app.getAppPath("exe"), str)
 }
 
-const getUrl = (str) => {
+export const getUrl = (str) => {
     if (str.startsWith("https://") || str.startsWith("http://")){
         return str
     }
@@ -18,4 +18,3 @@ const getUrl = (str) => {
         return join("file://", app.getAppPath(), "build", str)
     }
 }
-module.exports = {getPath, getUrl}
