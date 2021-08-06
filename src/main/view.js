@@ -1,7 +1,8 @@
-const {app, ipcMain, BrowserView} = require("electron")
-const { parse } = require("url")
-const { getUrl } = require("./utils")
-class View {
+import {app, ipcMain, BrowserView} from "electron"
+import { parse } from "url"
+import { getUrl } from "./utils"
+
+export default class View {
     browserView = null
     homeUrl = ""
     favicon = ""
@@ -74,5 +75,3 @@ class View {
     }
     destory(){}
 }
-
-module.exports = View
