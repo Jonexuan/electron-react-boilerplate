@@ -11,6 +11,7 @@
       "buildResources": "static/icons"
     },
     "files": ["build/**/*", "package.json", "static/**/*"],
+    "extraResources": ["config/**/*"],
     "publish": "github",
     "linux": {
       "category": "Network",
@@ -20,20 +21,17 @@
           "arch": ["x64"]
         },
         {
-          "target": "deb",
+          "target": "zip",
           "arch": ["x64"]
         }
       ]
     },
     "win": {
       "target": [
-        {
-          "target": "nsis-web",
-          "arch": ["x64", "ia32"]
-        },
+
         {
           "target": "zip",
-          "arch": ["x64", "ia32"]
+          "arch": ["x64"]
         }
       ]
     },

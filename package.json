@@ -1,7 +1,7 @@
 {
   "name": "electron-react-boilerplate",
   "version": "1.0.0",
-  "main": "src/main",
+  "main": "build/main.bundle.js",
   "repository": "https://github.com/kenlyau/electron-react-boilerplate.git",
   "author": "kenlyau <newallah@gmail.com>",
   "license": "MIT",

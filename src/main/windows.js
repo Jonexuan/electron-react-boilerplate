@@ -1,5 +1,6 @@
 import {app, BrowserWindow} from "electron"
 import {EventEmitter} from "events"
+import { getUrl } from "./utils"
 
 export default class Windows extends EventEmitter {
     windows = new Map()
@@ -18,10 +19,11 @@ export default class Windows extends EventEmitter {
                 contextIsolation: true
             }
         })
-        win.loadURL("http://127.0.0.1:4444/login.html")
+        win.loadURL(getUrl("login.html"))
         this.windows.set("login", win)
         win.on("closed", () => {
             this.windows.delete("login")
+            app.exit()
         })
     }
     createMainWindow(){
@@ -34,7 +36,7 @@ export default class Windows extends EventEmitter {
                 contextIsolation: true
             }
         })
-        win.loadURL("http://127.0.0.1:4444/main.html")
+        win.loadURL(getUrl("master.html"))
         win.on("closed", () => {
             this.windows.delete("main")
             app.exit()
