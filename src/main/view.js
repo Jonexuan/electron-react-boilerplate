@@ -47,6 +47,9 @@ export default class View {
             horizontal: false,
             vertical: false
         })
+        if (process.env.NODE_ENV === "development"){
+            this.webContents.openDevTools()
+        }
     }
     getWebContents(){
         return this.browserView.webContents

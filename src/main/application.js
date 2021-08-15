@@ -47,6 +47,13 @@ export default class Application {
         const views = this._getViewsState()
         this.sendToMainWebContents("TAB_VIEW_SYNC", {views})
     }
+    sendCommonEventToViewContents({evtName, evtView}, payload){
+        const view = this.views.getView(evtView)
+        if (view){
+            view.webContents.send("COMMON_EVENT:"+evtName, payload)
+        }
+
+    }
     setCurrentView(id){
         this.views.setFocus(id)
         this.sendViewsStateToWebContents()

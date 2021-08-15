@@ -25,4 +25,8 @@ export default (application) => {
     ipcMain.on("TAB_VIEW_QUERY", (e) => {
         application.sendViewsStateToWebContents()
     })
+    ipcMain.on("COMMON_EVENT", (e, payload) => {
+        console.log("common_event", payload)
+        application.sendCommonEventToViewContents(payload.evt, payload.payload)
+    })
 }

@@ -26,6 +26,15 @@ contextBridge.exposeInMainWorld("APP", {
             silly: ( message, meta ) => send( 'silly', message, meta ),
         };
     },
+    ipcSend: ({evtName, evtView}, payload) => {
+        console.log("preload send ipc event:", {evtName, evtView})
+        ipcRenderer.send("COMMON_EVENT", {evt: {evtName, evtView}, payload})
+    },
+    ipcReceive: (evtName, onReceived) => {
+        const callback = (_, ...args) => onReceived(...args)
+        ipcRenderer.on("COMMON_EVENT:"+evtName, callback)
+    },
     config,
-    styles
+    styles,
+
 })
