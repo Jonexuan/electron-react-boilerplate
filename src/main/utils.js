@@ -5,7 +5,7 @@ export const getPath = (str) => {
     if (process.env.NODE_ENV == "development"){
         return resolve(str)
     }
-    return join(app.getAppPath(), "../", str)
+    return join(app.getAppPath(), str)
 }
 
 export const getUrl = (str) => {

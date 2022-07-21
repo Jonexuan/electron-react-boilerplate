@@ -20,7 +20,7 @@ export default class Application {
     }
 
     init(){
-        console.log(this.config)
+        // console.log(this.config)
         ipcListener(this)
         this.windows.init()
         this.mainWindow = this.windows.windows.get("main")

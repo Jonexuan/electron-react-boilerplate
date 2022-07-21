@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 
-const INCLUDE = resolve(__dirname, 'src');
+const INCLUDE = resolve(__dirname, '../', 'src');
 
 const BUILD_FLAGS = {
   ENABLE_EXTENSIONS: false,
@@ -31,7 +31,7 @@ const config = {
   devtool: dev ? 'eval-source-map' : false,
 
   output: {
-    path: resolve(__dirname, 'build'),
+    path: resolve(__dirname, '../', 'build'),
     filename: '[name].bundle.js',
   },
 

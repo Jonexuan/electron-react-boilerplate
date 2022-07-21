@@ -2,7 +2,7 @@ const { getConfig, dev } = require('./webpack.config.base');
 const { spawn, execSync } = require('child_process');
 const { resolve } = require("path")
 
-const INCLUDE = resolve(__dirname, 'src');
+const INCLUDE = resolve(__dirname, './','src');
 
 let electronProcess;
 
